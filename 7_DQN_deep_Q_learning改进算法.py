@@ -57,6 +57,7 @@ class DQN:
             state = torch.tensor([state], dtype=torch.float).to(self.device)
             action = self.q_net(state).argmax().item()
         return action
+
    	def max_q_value(self, state):
         state = torch.tensor([state], dtype=torch.float).to(self.device)
         return self.q_net(state).max().item()
